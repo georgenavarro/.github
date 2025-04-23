@@ -1,0 +1,231 @@
+@media screen {
+    .container {
+        grid-template:
+        "resume-header resume-header  resume-header  resume-header  resume-header  resume-header  resume-corner"
+        "summ-header   summ-text      summ-text      summ-text      summ-text      summ-text      summ-text"
+        "exp-header    rank-header    rank-header    rank-header    rank-header    rank-header    rank-header"
+        "exp-header    rank-app1-icon rank-app1-text rank-app1-text rank-app2-icon rank-app2-text rank-app2-text"
+        "exp-header    rank-list      rank-list      rank-list      rank-list      rank-list      rank-list"
+        "exp-header    mamm-header    mamm-header    mamm-header    mamm-header    mamm-header    mamm-header"
+        "exp-header    mamm-app1-icon mamm-app1-text mamm-app1-text mamm-app2-icon mamm-app2-text mamm-app2-text"
+        "exp-header    mamm-list      mamm-list      mamm-list      mamm-list      mamm-list      mamm-list"
+        "exp-header    will-header    will-header    will-header    will-header    will-header    will-header"
+        "exp-header    will-app1-icon will-app1-text will-app1-text will-app2-icon will-app2-text will-app2-text"
+        "exp-header    will-app3-icon will-app3-text will-app3-text will-app4-icon will-app4-text will-app4-text"
+        "exp-header    will-list      will-list      will-list      will-list      will-list      will-list"
+        "skills-header skills-list    skills-list    skills-list    skills-list    skills-list    skills-list"
+        "edu-header    csula-header   csula-header   csula-header   csula-header   csula-header   csula-header"
+        "edu-header    csula-list     csula-list     csula-list     csula-list     csula-list     csula-list"
+        "edu-header    smc-header     smc-header     smc-header     smc-header     smc-header     smc-header"
+        "edu-header    smc-list       smc-list       smc-list       smc-list       smc-list       smc-list"
+        ;
+    }
+
+    .break1 { display: none; }
+    .exp2-header { display: none; }
+}
+
+@media print {
+    @page { size: letter; }
+
+    .container {
+        grid-template:
+        "resume-header resume-header  resume-header  resume-header  resume-header  resume-header  resume-corner"
+        "summ-header   summ-text      summ-text      summ-text      summ-text      summ-text      summ-text"
+        "exp-header    rank-header    rank-header    rank-header    rank-header    rank-header    rank-header"
+        "exp-header    rank-app1-icon rank-app1-text rank-app1-text rank-app2-icon rank-app2-text rank-app2-text"
+        "exp-header    rank-list      rank-list      rank-list      rank-list      rank-list      rank-list"
+        "exp-header    mamm-header    mamm-header    mamm-header    mamm-header    mamm-header    mamm-header"
+        "exp-header    mamm-app1-icon mamm-app1-text mamm-app1-text mamm-app2-icon mamm-app2-text mamm-app2-text"
+        "exp-header    mamm-list      mamm-list      mamm-list      mamm-list      mamm-list      mamm-list"
+        "break1        break1         break1         break1         break1         break1         break1"
+        "exp2-header   will-header    will-header    will-header    will-header    will-header    will-header"
+        "exp2-header   will-app1-icon will-app1-text will-app1-text will-app2-icon will-app2-text will-app2-text"
+        "exp2-header   will-app3-icon will-app3-text will-app3-text will-app4-icon will-app4-text will-app4-text"
+        "exp2-header   will-list      will-list      will-list      will-list      will-list      will-list"
+        "skills-header skills-list    skills-list    skills-list    skills-list    skills-list    skills-list"
+        "edu-header    csula-header   csula-header   csula-header   csula-header   csula-header   csula-header"
+        "edu-header    csula-list     csula-list     csula-list     csula-list     csula-list     csula-list"
+        "edu-header    smc-header     smc-header     smc-header     smc-header     smc-header     smc-header"
+        "edu-header    smc-list       smc-list       smc-list       smc-list       smc-list       smc-list"
+        ;
+    }
+
+    .break1 { grid-area: break1; }
+    .break2 { grid-area: break2; }
+    .exp2-header { grid-area: exp2-header; }
+}
+
+:root {
+    --page-color: #FFFFFF;
+    --text-color: #404050;
+    --accent-color: #F15A5B;
+    --separator-color: #DDDDDD;
+
+    --primary-spacing: 16px;
+    --secondary-spacing: 4px;
+
+    --large-corner: 8px;
+    --small-corner: 4px;
+}
+
+body {
+    background-color: var(--page-color);
+}
+
+.container {
+    color: var(--text-color);
+    display: grid;
+    font-family: Verdana, sans-serif;
+    gap: var(--primary-spacing);
+    grid-template-columns: auto auto 1fr 1fr auto 1fr 1fr;
+    margin: auto;
+    max-width: 200mm;
+
+    & > * { margin: 0px; }
+    & > span > * { margin: 0px; }
+}
+
+h1 {
+    font-size: xxx-large;
+    margin: 0px;
+
+    .fname { font-weight: bold; }
+    .lname { font-weight: normal; color: var(--accent-color); }
+}
+
+h2 {
+    align-self: start;
+    border-right: 2px solid var(--separator-color);
+    color: var(--accent-color);
+    font-size: small;
+    height: 100%;
+    padding: var(--secondary-spacing) var(--secondary-spacing) 0px var(--secondary-spacing);
+    text-transform: uppercase;
+    text-align: right;
+    writing-mode: sideways-lr;
+}
+
+h3 {
+    font-weight: normal;
+    margin: 0px;
+}
+
+h4 {
+    font-size: small;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.resume-header {
+    align-self: center;
+    grid-area: resume-header;
+
+    .links {
+        font-size: small;
+
+        img {
+            opacity: 14%;
+            height: 1.5em;
+            margin: 0px var(--secondary-spacing);
+            vertical-align: middle;
+        }
+    }
+}
+
+.resume-corner {
+    align-self: center;
+    aspect-ratio: 1 / 1;
+    background-color: var(--accent-color);
+    border-radius: var(--large-corner);
+    display: grid;
+    grid-area: resume-corner;
+    height: 100%;
+
+    div {
+        align-self: center;
+        color: var(--page-color);
+        font-size: xxx-large;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.summ-header { grid-area: summ-header; }
+.summ-text { grid-area: summ-text; }
+
+.exp-header { grid-area: exp-header; }
+.rank-header { grid-area: rank-header; }
+.rank-app1-icon { grid-area: rank-app1-icon; }
+.rank-app1-text { grid-area: rank-app1-text; }
+.rank-app2-icon { grid-area: rank-app2-icon; }
+.rank-app2-text { grid-area: rank-app2-text; }
+.rank-list { grid-area: rank-list; }
+.mamm-header { grid-area: mamm-header; }
+.mamm-app1-icon { grid-area: mamm-app1-icon; }
+.mamm-app1-text { grid-area: mamm-app1-text; }
+.mamm-app2-icon { grid-area: mamm-app2-icon; }
+.mamm-app2-text { grid-area: mamm-app2-text; }
+.mamm-list { grid-area: mamm-list; }
+.will-header { grid-area: will-header; }
+.will-app1-icon { grid-area: will-app1-icon; }
+.will-app1-text { grid-area: will-app1-text; }
+.will-app2-icon { grid-area: will-app2-icon; }
+.will-app2-text { grid-area: will-app2-text; }
+.will-app3-icon { grid-area: will-app3-icon; }
+.will-app3-text { grid-area: will-app3-text; }
+.will-app4-icon { grid-area: will-app4-icon; }
+.will-app4-text { grid-area: will-app4-text; }
+.will-list { grid-area: will-list; }
+
+.rank-app1-icon,
+.rank-app2-icon,
+.mamm-app1-icon,
+.mamm-app2-icon,
+.will-app1-icon,
+.will-app2-icon,
+.will-app3-icon,
+.will-app4-icon { align-self: center; border-radius: var(--large-corner); height: 3em; }
+
+.rank-app1-icon,
+.will-app3-icon { border: 1px solid var(--separator-color); }
+
+.rank-app1-text,
+.rank-app2-text,
+.mamm-app1-text,
+.mamm-app2-text,
+.will-app1-text,
+.will-app2-text,
+.will-app3-text,
+.will-app4-text { align-self: center; font-size: small; }
+
+.skills-header { grid-area: skills-header; }
+.skills-list { grid-area: skills-list; }
+.skill {
+    margin: var(--secondary-spacing) 0px;
+
+    span {
+        border: 1px solid lightgray;
+        border-radius: var(--small-corner);
+        font-size: small;
+        padding: 1px var(--small-corner);
+    }
+}
+
+.edu-header { grid-area: edu-header; }
+.csula-header { grid-area: csula-header; }
+.csula-list { grid-area: csula-list; }
+.smc-header { grid-area: smc-header; }
+.smc-list { grid-area: smc-list; }
+
+.ref-header { grid-area: ref-header; }
+.ref-1 { grid-area: ref-1; }
+.ref-2 { grid-area: ref-2; }
+.ref-3 { grid-area: ref-3; }
+.ref-4 { grid-area: ref-4; }
+
+a { color: var(--text-color); }
+p { line-height: 1.3em; }
+ul { padding-left: 24px; }
+li + li { margin-top: 0.3em; }
